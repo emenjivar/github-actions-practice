@@ -3,7 +3,7 @@ name: Workflow onRepository dispatch
 on:
   repository_dispatch:
     types:
-      - webhook
+      - webhook-test
 
 jobs:
   respond-to-dispatch:
