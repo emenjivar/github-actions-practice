@@ -9,10 +9,10 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Run tests
-      id: tests # Reference used in the next job
+      # id: tests # Reference used in the next job
       run: |
         echo "#Runing tests..."
-        exit 0 # Simulate failure
+        exit 1 # Simulate failure
 
     - name: Check success status
       if: success()
