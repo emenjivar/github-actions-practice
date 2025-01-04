@@ -1,0 +1,42 @@
+name: status check example
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run tests
+      id: tests # Reference used in the next job
+      run: echo "#Runing tests..."
+
+    - name: Check success status
+      if: success()
+      run: echo "Test passed successful"
+
+    - name: Check failure status
+      if: failure()
+      run: echo "Test failed"
+
+    - name: Always run this step
+      if: always() # This steps will be executed regardless of whether the previous steps succedd or fail
+      run: echo "This step always run"
+
+    - name: Check cancelled
+      if: cancelled()
+      run: echo "The job was cancelled"
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test # Depentes on the previous job
+   
+    steps:
+      - name: Deploy to production
+        if: success() # Verify the test 
+        run: echo "Deploying to production..."
+        
+      - name: Send a failure notification email
+        if: failure()
+        run: echo "Someting failed with the build"
