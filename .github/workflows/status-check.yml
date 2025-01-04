@@ -37,9 +37,9 @@ jobs:
    
     steps:
       - name: Deploy to production
-        if: success() # Verify the test 
+        if: ${{ needs.test.result == 'success' }} # Verify the test 
         run: echo "Deploying to production..."
         
       - name: Send a failure notification email
-        if: failure()
+        if: ${{ needs.test.result == 'failure' }}
         run: echo "Someting failed with the build"
