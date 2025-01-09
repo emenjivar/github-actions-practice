@@ -8,8 +8,3 @@ jobs:
       - name: Github context
         run: |
           echo "action ${{ github.action }}"
-          echo "action_ref: $ACTION_REF"
-	  echo "action_repository: $ACTION_REPOSITORY"
-        env:
-	  ACTION_REF: ${{ github.action_ref }}
-	  ACTION_REPOSITORY: ${{ github.action_repository }}
