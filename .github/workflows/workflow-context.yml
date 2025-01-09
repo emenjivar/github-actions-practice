@@ -27,3 +27,7 @@ jobs:
 
           # Access throguth env object
           echo "enviroment_variable: ${{ env.enviroment_variable }}"
+      
+      - name: Job context
+        run: |
+          echo "container: ${{ job.container }}"
