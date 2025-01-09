@@ -6,4 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Github context
-        run: echo "github action ${{ github.action }}"
+        run: |
+          echo "action ${{ github.action }}"
+	        echo "action_ref: $ACTION_REF"
+	        echo "action_repository: $ACTION_REPOSITORY"
+	        echo "base_ref: ${{ github.base_ref }}"
+	        echo "env: ${{ github.env }}"
+	      env:
+		      ACTION_REF: ${{ github.action_ref }}
+		      ACTION_REPOSITORY: ${{ github.action_repository }}
