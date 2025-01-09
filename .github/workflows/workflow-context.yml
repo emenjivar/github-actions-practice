@@ -9,6 +9,7 @@ jobs:
         run: |
           echo "action ${{ github.action }}"
           echo "env: ${{ github.env }}"
+          echo "ref: ${{ github.ref }}"
           echo "action_ref: $ACTION_REF"
           echo "run_id: $RUN_ID"
           echo "run_number: ${{ github.run_number }}"
