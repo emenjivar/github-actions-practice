@@ -1,0 +1,9 @@
+name: Workflow context
+on: [push]
+
+jobs:
+  extract-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Github context
+        run: echo "github action ${{ github.action }}"
