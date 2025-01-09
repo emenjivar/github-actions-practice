@@ -8,3 +8,4 @@ jobs:
       - name: Github context
         run: |
           echo "action ${{ github.action }}"
+          echo "env: ${{ github.env }}"
