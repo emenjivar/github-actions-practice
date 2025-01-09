@@ -1,5 +1,7 @@
 name: Workflow context
 on: [push]
+env:
+  enviroment_variable: "THIS IS FROM ENVIROMENT"
 
 jobs:
   extract-data:
@@ -14,6 +16,7 @@ jobs:
           echo "run_id: $RUN_ID"
           echo "run_number: ${{ github.run_number }}"
           echo "run_attemp: ${{ github.run_attempt }}"
+          echo "enviroment_variable: $enviroment_variable"
         env:
           ACTION_REF: ${{ github.action_ref }}
           RUN_ID: ${{ github.run_id }}
