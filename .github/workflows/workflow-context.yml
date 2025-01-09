@@ -10,5 +10,7 @@ jobs:
           echo "action ${{ github.action }}"
           echo "env: ${{ github.env }}"
           echo "action_ref: $ACTION_REF"
+          echo "run_id: $RUN_ID
         env:
           ACTION_REF: ${{ github.action_ref }}
+          RUN_ID: ${{ github.run_id }}
