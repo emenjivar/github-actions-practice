@@ -17,6 +17,7 @@ jobs:
           echo "run_number: ${{ github.run_number }}"
           echo "run_attemp: ${{ github.run_attempt }}"
           echo "enviroment_variable: $enviroment_variable"
+          echo "enviroment_variable: ${{ env.enviroment_variable }}"
         env:
           ACTION_REF: ${{ github.action_ref }}
           RUN_ID: ${{ github.run_id }}
