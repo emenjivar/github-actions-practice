@@ -30,4 +30,4 @@ jobs:
       
       - name: Job context
         run: |
-          echo "container: ${{ job.container }}"
+          echo "container: ${{ toJSON(job) }}"
