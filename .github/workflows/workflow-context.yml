@@ -9,3 +9,6 @@ jobs:
         run: |
           echo "action ${{ github.action }}"
           echo "env: ${{ github.env }}"
+          echo "action_ref: $ACTION_REF"
+        env:
+          ACTION_REF: ${{ github.action_ref }}
