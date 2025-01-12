@@ -1,0 +1,16 @@
+# The goal is to create a new issue after every commit
+name: Open new issue
+on: [push]
+
+jobs:
+  open-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - run: |
+          gh issue --repo ${{ github.repository }} \
+            create --title "Issue title" --body ${{ github.event.head_commit.message  }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
