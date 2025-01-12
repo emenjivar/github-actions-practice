@@ -11,6 +11,6 @@ jobs:
     steps:
       - run: |
           gh issue --repo ${{ github.repository }} \
-            create --title "Issue title" --body ${{ github.event.head_commit.message  }}
+            create --title "Issue title" --body "${{ github.event.head_commit.message  }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
