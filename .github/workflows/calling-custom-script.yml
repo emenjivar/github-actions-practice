@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: checkout repository
         uses: actions/checkout@v3
+
+      - name: Grant execution permissions
+        run: chmod +x ./custom-script.sh
         
       - name: Calling script
         run: ./custom-script.sh
